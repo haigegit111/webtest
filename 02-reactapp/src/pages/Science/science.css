@@ -1,0 +1,20 @@
+.science  .title{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid  #bfcce5;
+  color: #5184eb;
+  padding-left: 10px;
+  position: relative;
+}
+.science  .title::before{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background-color: #5184eb;
+  left: 0;
+  top: 15px;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import './science.css'
 class Science extends Component{
   constructor(props){
     super(props)
@@ -19,12 +21,22 @@ class Science extends Component{
         </div>
         <div className='computer'>
           <div className='title'>电脑圈</div>
+          <div className='content'>
+            {
+
+            }
+          </div>
         </div>
         <div className='car'>
           <div className='title'>汽车圈</div>
+          <div className='content'>
+            {
+
+            }
+          </div>
         </div>
       </div>
     )
   }
 }
-export default Science;
+export default withRouter(Science);

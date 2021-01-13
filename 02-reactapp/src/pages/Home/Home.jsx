@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { Button } from 'antd'
+import { Button, Spin } from 'antd'
 import Tan from '../../components/Tan'
 import moment from 'moment'
 import homeApi from '../../api/homeApi'
@@ -17,40 +17,43 @@ class Home extends Component{
       content: [
         'iphone',
         'macbook'
-      ]
+      ],
+      isSpin:true
     }
   }
   componentWillMount(){
     this.getNowNews()
-    this.getTokes()
+    //this.getTokes()
   }
   getNowNews(){
     homeApi.getNowNews().then(res => {
       if(res.status === 200) {
         this.setState({
-          nowNews: res.data.data
+          nowNews: res.data.data,
+          isSpin: false
         })
       }
     })
   }
-  getTokes(){
-    homeApi.getTokes().then(res => {
-      if(res.status === 200){
-        console.log(res)
-        this.setState({
-          tokes: res.data.data.list
-        })
-      }
-    })
-  }
+  // getTokes(){
+  //   homeApi.getTokes().then(res => {
+  //     if(res.status === 200){
+  //       console.log(res)
+  //       this.setState({
+  //         tokes: res.data.data.list
+  //       })
+  //     }
+  //   })
+  // }
   showTan = () => {
     this.setState({
       isVisible: true
     })
   }
   render(){
-    const { nowNews, tokes, isVisible, title, content } = this.state
+    const { nowNews, tokes, isVisible, title, content, isSpin } = this.state
     return (
+      <Spin spinning={isSpin}>
       <div className='home contaner'>
         <div className='timeTitle'>
           <div className='desc'>今日新闻</div>
@@ -89,8 +92,8 @@ class Home extends Component{
           isVisible={isVisible}
           content={content}
         />
-        
       </div>
+      </Spin>
     )
   }
 }
