@@ -2,13 +2,8 @@ import './App.css';
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Main from './pages/Main'
+import 'antd/dist/antd.css'
 class App extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      
-    }
-  }
   render(){
     return (
       <BrowserRouter>

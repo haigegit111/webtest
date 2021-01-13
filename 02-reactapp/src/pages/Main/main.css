@@ -1,11 +1,35 @@
 .header{
   display: flex;
+  border-bottom: 1px solid #f7f7f7;
 }
 .header .logo{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  margin: 0 10px;
 }
 .logo > img{
   width: 100%;
   height: 100%;
+}
+.header .menus{
+  display: flex;
+}
+.menus > .menuSon{
+  height: 80px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 22px;
+}
+.menus > .menuSon > a{
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700;
+}
+
+.lineBar{
+  border-bottom: 3px solid #5184eb;
+}
+.lineBar > a{
+  color: #5184eb !important;
 }

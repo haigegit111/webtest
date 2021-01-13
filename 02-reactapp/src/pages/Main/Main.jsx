@@ -1,6 +1,7 @@
 import { Component } from 'react'
-import { Button } from 'antd'
 import Header from './Header'
+import Routes from '../../Routes'
+import { withRouter } from 'react-router-dom'
 
 class Main extends Component{
   constructor(props){
@@ -9,18 +10,14 @@ class Main extends Component{
 
     }
   }
-  btnClick(e){
-    console.log(e)
-  }
   render(){
     return (
-      <div>
+      <div className='main'>
         <Header/>
-        <h1>这是mian页面</h1>
-        <Button onClick={(e)=>this.btnClick(e)}>点击</Button>
+        <Routes/>
       </div>
     )
   }
 }
 
-export default Main;
+export default withRouter(Main);
