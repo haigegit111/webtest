@@ -17,25 +17,52 @@
   margin: 100px auto;
   background-color: #ffffff;
   width: 600px;
-  height: 600px;
+  height: auto;
   position: relative;
   border-radius: 5px;
 }
 .tan > .main > .tHeader{
-  height: 80px;
+  height: 60px;
   border-bottom: 1px solid #bfcce5;
-  line-height: 80px;
+  line-height: 60px;
   padding: 0 20px ;
   font-size: 20px;
 }
 .tan > .main > .content{
-  margin-top: 20px;
+  
   font-size: 16px;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 .tan > .main > .cha{
   position: absolute;
   top: 0;
   right: 0;
   font-size: 20px;
+}
+
+.tan > .main > .tFooter{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid  #bfcce5;
+  padding-right: 15px;
+}
+.tan > .main > .tFooter > .ok{
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #5184eb;
+  border-radius: 5px;
+  color: white;
+  margin-right: 15px;
+}
+.tan > .main > .tFooter > .cancel{
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #bfcce5;
 }

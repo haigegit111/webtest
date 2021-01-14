@@ -1,0 +1,27 @@
+.card{
+  display: flex;
+  border-bottom: 1px solid #f7f7f7;
+}
+.card > .pic{
+  height: 100px;
+  width: auto;
+}
+.card > .pic >img {
+  width: auto;
+  height: 100%;
+}
+.card > .content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card > .content > .cTitle{
+  font-size: 18px;
+  font-weight: 600;
+}
+.card > .content > .descEt{
+  align-self: flex-end;
+  color: #cccccc;
+}

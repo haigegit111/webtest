@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { Button, Spin } from 'antd'
+import { Button, message, Spin } from 'antd'
 import Tan from '../../components/Tan'
+import Progress from '../../components/Progress'
 import moment from 'moment'
 import homeApi from '../../api/homeApi'
 import './home.css'
@@ -11,19 +12,14 @@ class Home extends Component{
     super(props)
     this.state = {
       nowNews: [],
-      tokes: [],
-      isVisible: false,
+      visible: false,
       title: 'Apple',
-      content: [
-        'iphone',
-        'macbook'
-      ],
+      content:['iphone 12','iphone 12 pro','iphone 12 pro max'],
       isSpin:true
     }
   }
   componentWillMount(){
     this.getNowNews()
-    //this.getTokes()
   }
   getNowNews(){
     homeApi.getNowNews().then(res => {
@@ -35,23 +31,22 @@ class Home extends Component{
       }
     })
   }
-  // getTokes(){
-  //   homeApi.getTokes().then(res => {
-  //     if(res.status === 200){
-  //       console.log(res)
-  //       this.setState({
-  //         tokes: res.data.data.list
-  //       })
-  //     }
-  //   })
-  // }
   showTan = () => {
     this.setState({
-      isVisible: true
+      visible: true
     })
   }
+  onCancel = () => {
+    this.setState({
+      visible: false
+    })
+  }
+  onOk = () => {
+    message.success('提交成功！')
+    this.onCancel()
+  }
   render(){
-    const { nowNews, tokes, isVisible, title, content, isSpin } = this.state
+    const { nowNews, visible, title, content, isSpin } = this.state
     return (
       <Spin spinning={isSpin}>
       <div className='home contaner'>
@@ -87,10 +82,20 @@ class Home extends Component{
           }
         </div> */}
         <Button type='primary' onClick={()=>this.showTan()}>弹框</Button>
+        {/* 弹框组件 */}
         <Tan
           title={title}
-          isVisible={isVisible}
+          visible={visible}
           content={content}
+          onCancel={this.onCancel}
+          onOk={this.onOk}
+        />
+        <br/>
+        <br/>
+        {/* 进度条组件 */}
+        <Progress
+          percentage={90}
+          bgColor={'blue'}
         />
       </div>
       </Spin>

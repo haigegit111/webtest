@@ -1,0 +1,15 @@
+.progress{
+  display: flex;
+  align-items: center;
+}
+.progress > .contentBox{
+  border-radius: 10px;
+  margin-right: 10px;
+  width: 120px;
+  height: 10px;
+  background-color: #f7f7f7;
+}
+.progress > .txt{
+  font-size: 10px;
+  color: #cccccc;
+}

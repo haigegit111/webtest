@@ -5,39 +5,33 @@ import './tan.css'
 class Tan extends Component{
   constructor(props){
     super(props)
-    let { isVisible, title, content } = this.props
     this.state = {
-      isVisible,
-      title,
-      content
+      
     }
   }
-  componentDidMount(){
-    console.log(this.props)
-  }
-  hideTan = () => {
-    this.setState({
-      isVisible: false
-    })
-  }
   render(){
-    const { isVisible, content, title } = this.state;
+    let { visible, content, title, onCancel, onOk } = this.props;
+    debugger
     return (
-      <div className='tan' style={{display: isVisible ? 'block' : 'none'}}>
+      <div className='tan' style={{display: visible ? 'block' : 'none'}}>
         <div className='main'>
           <div className='tHeader'>
             {title}
           </div>
           <div className='content'>
             {
-              content.map(item => {
-                return (<div key={item}>{item}</div>)
-              })
+              content ? (
+                content.map(item => {
+                  return (<div key={item}>{item}</div>)
+                })
+              ): null
             }
           </div>
           <div className='tFooter'>
+            <div className='ok' onClick={()=>onOk()}>确认</div>
+            <div className='cancel' onClick={()=>onCancel()}>取消</div>
           </div>
-          <div className='cha' onClick={()=>this.hideTan()}>
+          <div className='cha' onClick={()=>onCancel()}>
             <i className='iconfont icon-cha'/>
           </div>
         </div>
