@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Button, message, Spin } from 'antd'
 import Tan from '../../components/Tan'
@@ -7,6 +7,10 @@ import moment from 'moment'
 import homeApi from '../../api/homeApi'
 import './home.css'
 
+function Count(props){
+  const [countAll,setCountAll] = useState(0)
+  return 
+}
 class Home extends Component{
   constructor(props){
     super(props)
@@ -97,7 +101,9 @@ class Home extends Component{
           percentage={90}
           bgColor={'blue'}
         />
+        
       </div>
+
       </Spin>
     )
   }

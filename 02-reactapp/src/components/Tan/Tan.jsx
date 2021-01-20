@@ -11,7 +11,6 @@ class Tan extends Component{
   }
   render(){
     let { visible, content, title, onCancel, onOk } = this.props;
-    debugger
     return (
       <div className='tan' style={{display: visible ? 'block' : 'none'}}>
         <div className='main'>

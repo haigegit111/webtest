@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { Skeleton } from 'antd'
 import Card from '../../components/Card'
 import moment from 'moment'
 import './science.css'
@@ -18,7 +17,6 @@ class Science extends Component{
           cImgUrl: 'https://img14.360buyimg.com/n0/jfs/t1/132022/23/12216/60913/5f86195bEacd08599/c5dc348d3f943324.jpg',
           cTitle: 'iphone 12',
           cTime: moment().format('LLL')
-
         },
         {
           cImgUrl: 'https://img14.360buyimg.com/n0/jfs/t1/153455/36/12113/54148/5fe94a8bEce7c87e3/302326ac2e323570.jpg',
@@ -42,7 +40,7 @@ class Science extends Component{
     const { phones } = this.state;
     return (
         <div className='science contaner'>
-          <Skeleton active/>
+          {/* <Skeleton active/> */}
           <div className='phone'>
             <div className='title'>手机圈</div>
             <div className='content'>
@@ -63,7 +61,15 @@ class Science extends Component{
             <div className='title'>电脑圈</div>
             <div className='content'>
               {
-
+                phones.map((item,index) => {
+                  return (
+                    <Card
+                      cTitle={item.cTitle}
+                      cImgUrl={item.cImgUrl}
+                      cTime={item.cTime}
+                    />
+                  )
+                })
               }
             </div>
           </div>
@@ -71,7 +77,15 @@ class Science extends Component{
             <div className='title'>汽车圈</div>
             <div className='content'>
               {
-
+                phones.map((item,index) => {
+                  return (
+                    <Card
+                      cTitle={item.cTitle}
+                      cImgUrl={item.cImgUrl}
+                      cTime={item.cTime}
+                    />
+                  )
+                })
               }
             </div>
           </div>
