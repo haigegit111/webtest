@@ -1,0 +1,23 @@
+.tk{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(1,1,1,0.1);
+}
+.tk > .tMain{
+  width: 500px;
+  /* height: 600px; */
+  background: #ffffff;
+  margin: 100px auto;
+}
+.tk > .tMain > .tHeader{
+  font-size: 26px;
+  padding: 10px;
+  border-bottom: 1px solid #bfcce5;
+}
+.tk > .tMain > .tBody{
+  padding: 10px;
+  font-size: 22px;
+}

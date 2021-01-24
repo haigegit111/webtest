@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Children, Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import './tan.css'
 
@@ -11,11 +11,16 @@ class Tan extends Component{
   }
   render(){
     let { visible, content, title, onCancel, onOk } = this.props;
+    const { children } = this.props
+    // console.log(children)
     return (
       <div className='tan' style={{display: visible ? 'block' : 'none'}}>
         <div className='main'>
           <div className='tHeader'>
             {title}
+            {
+              children
+            }
           </div>
           <div className='content'>
             {

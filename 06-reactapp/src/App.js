@@ -1,7 +1,7 @@
 import './App.css';
 
 function Tom(props){
-  console.log(props)
+  //console.log(props)
   return (
     <div>
       {props.title}

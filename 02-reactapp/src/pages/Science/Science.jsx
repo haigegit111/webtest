@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import { Button, Col, message, Row } from 'antd'
 import Card from '../../components/Card'
+import Tk from '../../components/Tk'
 import moment from 'moment'
 import './science.css'
 class Science extends Component{
@@ -29,15 +31,39 @@ class Science extends Component{
       ],
       cars: [
 
+      ],
+      visible: false,
+      content: [
+        'iphone',
+        'macbook',
+        'ipad'
       ]
     }
   }
   componentDidMount(){
     
   }
+  tkShow = () => {
+    this.setState({
+      visible: true
+    })
+    return
+  }
+  onCancel = () => {
+    this.setState({
+      visible: false
+    })
+  }
+  onOk = () => {
+    this.setState({
+      visible: false
+    },() => {
+      message.success('提交成功！')
+    })
+  }
   render(){
     const {  } = this.props
-    const { phones } = this.state;
+    const { phones, visible, content } = this.state;
     return (
         <div className='science contaner'>
           {/* <Skeleton active/> */}
@@ -48,6 +74,7 @@ class Science extends Component{
                 phones.map((item,index) => {
                   return (
                     <Card 
+                      key={index}
                       cTitle={item.cTitle}
                       cImgUrl={item.cImgUrl}
                       cTime={item.cTime}
@@ -64,6 +91,7 @@ class Science extends Component{
                 phones.map((item,index) => {
                   return (
                     <Card
+                      key={index}
                       cTitle={item.cTitle}
                       cImgUrl={item.cImgUrl}
                       cTime={item.cTime}
@@ -80,6 +108,7 @@ class Science extends Component{
                 phones.map((item,index) => {
                   return (
                     <Card
+                      key={index}
                       cTitle={item.cTitle}
                       cImgUrl={item.cImgUrl}
                       cTime={item.cTime}
@@ -89,6 +118,36 @@ class Science extends Component{
               }
             </div>
           </div>
+          <div>
+            <Button type='primary' onClick={this.tkShow}>点击</Button>
+          </div>
+          <Tk
+            title={'apple'}
+            visible={visible}
+            onCancel={this.onCancel}
+          >
+            <ul>
+              {
+                content.map((item, index) => {
+                  return (
+                    <li key={index}>{item}</li>
+                  )
+                })
+              }
+            </ul>
+            <div className='tfooter' style={{borderTop:'1px solid #bfcce5',padding:'10px'}}>
+              <Row justify='space-between' >
+                <Col span={12}></Col>
+                <Col span={6}>
+                  <Button type='ghost' onClick={this.onOk}>确认</Button>
+                </Col>
+                <Col span={6}>
+                  <Button onClick={this.onCancel}>取消</Button>
+                </Col>
+              </Row>
+            </div>
+            
+          </Tk>
         </div>
     )
   }

@@ -93,7 +93,13 @@ class Home extends Component{
           content={content}
           onCancel={this.onCancel}
           onOk={this.onOk}
-        />
+        >
+          <div>
+            <h1>apple</h1>
+            <h1>huawei</h1>
+            <h1>xiaomi</h1>
+          </div>
+        </Tan>
         <br/>
         <br/>
         {/* 进度条组件 */}
