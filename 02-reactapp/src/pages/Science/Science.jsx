@@ -139,10 +139,10 @@ class Science extends Component{
               <Row justify='space-between' >
                 <Col span={12}></Col>
                 <Col span={6}>
-                  <Button type='ghost' onClick={this.onOk}>确认</Button>
+                  <Button type='primary' onClick={this.onOk}>确认</Button>
                 </Col>
                 <Col span={6}>
-                  <Button onClick={this.onCancel}>取消</Button>
+                  <Button type='ghost' onClick={this.onCancel}>取消</Button>
                 </Col>
               </Row>
             </div>

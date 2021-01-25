@@ -1,10 +1,9 @@
-import {  Component, Fragment } from 'react'
+import { Component, Fragment } from 'react'
 import './tk.css'
 class Tk extends Component{
   constructor(props){
     super(props)
     this.state = {
-      //visible: false
     }
   }
   render(){
@@ -22,6 +21,7 @@ class Tk extends Component{
                   children
                 }
               </div>
+              
             </div>
           </div>
           

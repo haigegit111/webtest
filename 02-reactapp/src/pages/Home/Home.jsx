@@ -85,9 +85,9 @@ class Home extends Component{
             })
           }
         </div> */}
-        <Button type='primary' onClick={()=>this.showTan()}>弹框</Button>
+        {/* <Button type='primary' onClick={()=>this.showTan()}>弹框</Button> */}
         {/* 弹框组件 */}
-        <Tan
+        {/* <Tan
           title={title}
           visible={visible}
           content={content}
@@ -101,12 +101,12 @@ class Home extends Component{
           </div>
         </Tan>
         <br/>
-        <br/>
+        <br/> */}
         {/* 进度条组件 */}
-        <Progress
+        {/* <Progress
           percentage={90}
           bgColor={'blue'}
-        />
+        /> */}
         
       </div>
 
