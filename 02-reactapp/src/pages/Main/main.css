@@ -16,7 +16,8 @@
 }
 .menus > .menuSon{
   height: 80px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  margin: 0 20px;
   text-align: center;
   line-height: 80px;
   font-size: 22px;
@@ -32,4 +33,9 @@
 }
 .lineBar > a{
   color: #5184eb !important;
+}
+.menus a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
