@@ -13,7 +13,6 @@ class Happy extends Component {
     return (
       <div className='happy contaner'>
         <h1 style={{textAlign:'center',padding: '0 15px'}}>欢迎来到娱乐的世界</h1>
-        
       </div>
     )
   }

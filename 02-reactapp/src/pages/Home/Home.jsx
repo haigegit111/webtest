@@ -54,6 +54,7 @@ class Home extends Component{
     return (
       <Spin spinning={isSpin}>
       <div className='home contaner'>
+        <h1 style={{textAlign:'center'}}>宏哥牛逼！</h1>
         <div className='timeTitle'>
           <div className='desc'>今日新闻</div>
           <div className='time'>{moment().format("YYYY年MM月DD号 dddd")}</div>
