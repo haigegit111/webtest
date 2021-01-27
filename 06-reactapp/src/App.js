@@ -1,6 +1,7 @@
 import { Component, Fragment } from 'react'
 import { Button } from 'antd'
 import Forms from './pages/Forms'
+import Status from './pages/Status'
 import 'antd/dist/antd.css'
 import './App.css';
 
@@ -91,6 +92,8 @@ class App extends Component{
         <ActionLink/>
         <Toggle/>
         <Forms/>
+        <hr/>
+        <Status/>
       </div>
     )
   }
