@@ -4,7 +4,7 @@ import Forms from './pages/Forms'
 import Status from './pages/Status'
 import 'antd/dist/antd.css'
 import './App.css';
-
+import Extds from './pages/Extds'
 class Clock extends Component{
   constructor(props){
     super(props)
@@ -40,7 +40,6 @@ class Clock extends Component{
 function ActionLink(props){
   function handleClick(e){
     e.preventDefault()
-    //console.log(e)
   }
   return (
     <Fragment>
@@ -94,6 +93,8 @@ class App extends Component{
         <Forms/>
         <hr/>
         <Status/>
+        <hr/>
+        <Extds/>
       </div>
     )
   }

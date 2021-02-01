@@ -119,7 +119,6 @@ class Science extends Component{
             </div>
           </div>
           <div>
-            <Button type='primary' onClick={this.tkShow}>点击</Button>
           </div>
           <Tk
             title={'apple'}
