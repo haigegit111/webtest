@@ -30,9 +30,11 @@ class Happy extends Component {
     const { visible1, visible2 } = this.state;
     return (
       <div className='happy contaner'>
-        <h1 style={{ textAlign: 'center', padding: '0 15px' }} onClick={() => this.setState({ visible1: true })}>欢迎来到娱乐的世界1</h1>
-        <h1 style={{ textAlign: 'center', padding: '0 15px' }} onClick={() => this.setState({ visible2: true })}>欢迎来到娱乐的世界2</h1>
-        <Maps/>
+        {/* <h1 style={{ textAlign: 'center', padding: '0 15px' }} onClick={() => this.setState({ visible1: true })}>欢迎来到娱乐的世界1</h1>
+        <h1 style={{ textAlign: 'center', padding: '0 15px' }} onClick={() => this.setState({ visible2: true })}>欢迎来到娱乐的世界2</h1> */}
+        <br/>
+        <Maps 
+        />
         <Modal
           visible={visible1}
           onCancel={this.onCancel1}
