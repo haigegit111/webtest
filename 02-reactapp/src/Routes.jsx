@@ -5,6 +5,7 @@ import Main from './pages/Main'
 import Home from './pages/Home'
 import Science from './pages/Science'
 import Happy from './pages/Happy'
+import { Charts } from './components/Maps'
 const nav = {
   "/login": {
     title: '登陆',
@@ -25,6 +26,10 @@ const nav = {
   "/happy": {
     title: '娱乐',
     component: Happy
+  },
+  "/charts": {
+    title: '图表',
+    component: Charts
   }
 }
 
@@ -33,7 +38,7 @@ const Routes = () => (
     {
       Object.keys(nav).map((key, index) => {
         let item = nav[key]
-        return <Route exact key={key} component={item.component} path={key}/>
+        return <Route exact key={key} component={item.component} path={key} />
       })
     }
     <Redirect to='/home' />

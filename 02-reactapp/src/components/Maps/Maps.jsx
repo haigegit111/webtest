@@ -2,7 +2,7 @@ import { Map, Marker, NavigationControl, InfoWindow, MapTypeControl, ScaleContro
 import React, { Component, Fragment } from 'react'
 import { Button } from 'antd'
 import Com from './Com'
-
+import Charts from './Charts'
 function Dom(props) {
   return (
     <div style={{ width: '40px', height: '40px', background: '#7759AF', borderRadius: '40px', color: '#fff', lineHeight: '40px', textAlign: 'center' }}>
@@ -11,51 +11,48 @@ function Dom(props) {
   )
 }
 class Example extends Component {
+  componentDidMount() {
+    this.maps()
+  }
+  maps() {
+    let maps = new window.BMapGL.Map('maps');
+    let point = new window.BMapGL.Point(116.404, 39.915);
+    maps.centerAndZoom(point, 16)
+    maps.enableScrollWheelZoom()
+    // let opts = {
+    //   anchor: window.BMAP_ANCHOR_TOP_RIGHT
+    // }
+    // let LocationControl = new window.BMapGL.LocationControl(opts);
+    // maps.addControl(LocationControl)
+
+    function myFun(result) {
+      var cityName = result.name;
+      maps.setCenter(cityName);
+    }
+    let myCity = new window.BMapGL.LocalCity();
+    myCity.get(myFun);
+  }
   render() {
     return (
-      <Map
-        zoom={12}
-        tilt={30}
-        style={{ height: 600 }}
-        center={new window.BMapGL.Point(116.404449, 39.914889)}
-        enableScrollWheelZoom
-      >
-        {/* <Circle
-          center={new window.BMapGL.Point(116.40, 39.91)}
-          radius={5000}
-          strokeColor='#f00'
-          strokeWeight={2}
-          fillColor='#f00'
-          fillOpacity={0.3}
-          autoViewport
-          onClick={(e)=>console.log(e)}
-        /> */}
-        <CustomOverlay position={new window.BMapGL.Point(116.35, 39.88)}>
-          <Dom/>
-        </CustomOverlay>
+      // <Map
+      //   zoom={5}
+      //   tilt={30}
+      //   style={{ height: 600 }}
+      //   center={new window.BMapGL.Point(116.404449, 39.914889)}
+      //   enableScrollWheelZoom
+      // >
+      //   <CustomOverlay position={new window.BMapGL.Point(116.35, 39.88)}>
+      //     <Dom/>
+      //   </CustomOverlay>
+      // </Map>
+      <div id='maps' style={{ width: '100%', height: '600px' }}>
 
-        {/* info */}
-        {/* <InfoWindow
-          position={new window.BMapGL.Point(116.40, 39.91)}
-          title='标题'
-          text='快速文本窗口'
-          onClickclose={(e) => console.log(e)}
-        /> */}
-
-        {/* label */}
-        {/* <Label
-          position={new window.BMapGL.Point(116.40, 39.91)}
-          text='apple'
-        /> */}
-
-        {/* marker */}
-      </Map>
+      </div>
     )
   }
 }
 class Maps extends Component {
   componentDidMount() {
-    
   }
   //定位
   // mains = () => {
@@ -73,14 +70,13 @@ class Maps extends Component {
   //   let myCity = new window.BMapGL.LocalCity();
   //   myCity.get(myFun);
   // }
-  
+
   render() {
     return (
       <div >
-       <Example/>
-        {/* <div id='map3' style={{width:'100%',height:'650px'}}></div> */}
-        {/* <Button onClick={() => this.shows()}>定位</Button> */}
-        <Com/>
+        <Example />
+        <Com />
+        {/* <Charts/> */}
       </div>
     )
   }

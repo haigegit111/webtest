@@ -1,11 +1,11 @@
-.cards{
+.cards.banben{
   width: 300px;
   border-radius: 10px;
   padding: 40px 15px 5px 15px;
   box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
   position: fixed;
   top: 120px;
-  left: 150px;
+  left: 160px;
   background: #ffffff;
   z-index: 100;
 }
@@ -16,6 +16,7 @@
 .Ttitle{
   width: 124px;
   height: 28px;
+  line-height: 28px;
   opacity: 1;
   background: linear-gradient(180deg,#a799f4, #9a79b2);
   border-radius: 0px;
@@ -25,4 +26,47 @@
   position: absolute;
   top: 0;
   left: 88px;
+}
+.cards.kaiye{
+  width: 300px;
+  border-radius: 10px;
+  padding: 40px 15px 15px 15px;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
+  position: fixed;
+  right: 160px;
+  top: 140px;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.cards.kaiye > div > p{
+  width: 100px;
+}
+.cards.shuju{
+  width: 300px;
+  
+  border-radius: 10px;
+  /* padding: 40px 15px 15px 15px; */
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
+  position: fixed;
+  right: 160px;
+  top: 320px;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.cards.shuju > div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cards.shuju .titles{
+  margin-top: 30px;
+}
+.cards.shuju > div > div{
+  text-align: center;
+}
+.ant-table-cell{
+  padding: 5px 10px !important;
+}
+.ant-spin-nested-loading{
+  width: 100%;
 }

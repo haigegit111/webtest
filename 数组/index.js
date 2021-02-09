@@ -8,3 +8,6 @@ console.log(a1);
 //2.构造函数的形式
 var a2=new Array('apple','huawei')
 console.log(a2);
+
+
+
