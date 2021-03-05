@@ -1,16 +1,17 @@
-import { Component} from 'react'
+import { Component } from 'react'
 
-class Login extends Component{
-  constructor(props){
+class Login extends Component {
+  constructor(props) {
     super(props)
     this.state = {
 
     }
   }
-  render(){
+  render() {
     return (
-      <div>
+      <div className='login'>
         <h1>这是登陆页面</h1>
+        
       </div>
     )
   }

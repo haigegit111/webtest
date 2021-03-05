@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 import Header from './Header'
 import Routes from '../../Routes'
 import { withRouter } from 'react-router-dom'
@@ -11,9 +11,12 @@ class Main extends Component{
     }
   }
   render(){
+    const { pathname } = this.props.location;
     return (
       <div className='main'>
-        <Header/>
+        {
+          pathname !== '/login' &&  <Header/>
+        }
         <Routes/>
       </div>
     )
