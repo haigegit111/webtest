@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    
+    console.log(typeof '')
+    console.log(typeof 'abc')
+    console.log(typeof 123)  
+    let a = "this is \"apple\""
+    console.log(a)
+    console.log("\\")
+    let b = null
+    console.log(typeof b === 'object' && b === null)
+    let c = 123 - a
+    console.log(c)  //NaN
+    console.log(typeof c) //number
+    console.log(isNaN(123))  //false
+    console.log(isNaN('123'))  // * isNaN()会先进行转化为数字 false
+    console.log(isNaN(c))     //true
+    console.log(typeof true)  //boolean
+  </script>
+</body>
+</html>
