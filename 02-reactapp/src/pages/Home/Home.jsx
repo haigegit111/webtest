@@ -5,7 +5,6 @@ import moment from 'moment'
 import homeApi from '../../api/homeApi'
 import './home.css'
 
-
 class SearchCom extends Component {
   constructor(props) {
     super(props)
@@ -35,15 +34,30 @@ class List1 extends Component {
           term: 'xiaomi',
           description: '3999'
         }
-      ]
+      ],
+      apple: 1
     }
   }
+  btnClick() {
+    let { items, apple } = this.state
+    items[3] = {
+      abc: 123
+    }
+    apple = 2
+    this.setState({
+      apple
+    })
+  }
   render() {
+    let { items, apple } = this.state
+    console.log(items)
+    console.log(apple)
     return (
       <>
         <Glossary
           items={this.state.items}
         />
+        <button onClick={() => this.btnClick()}>点击</button>
       </>
     )
   }
@@ -67,19 +81,47 @@ function Glossary(props) {
     </dl>
   )
 }
-class CustomTextInput extends Component{
-  constructor(props){
+class OuterClickExample extends Component {
+  constructor(props) {
     super(props)
-    // 创造一个 textInput DOM 元素的 ref
-    this.textInput = React.createRef()
     this.state = {
-
+      isOpen: false
+    }
+    this.toggleContainer = React.createRef();
+  }
+  componentDidMount() {
+    window.addEventListener('click', this.onClickOutsideHandler)
+  }
+  componentWillUnmount() {
+    window.removeEventListener('click', this.onClickOutsideHandler)
+  }
+  onClickHandler() {
+    this.setState(currentState => ({
+      isOpen: !currentState.isOpen
+    }))
+  }
+  onClickOutsideHandler = (event) => {
+    console.log(event.target)
+    if (this.state.isOpen && !this.toggleContainer.current.contains(event.target)) {
+      this.setState({ isOpen: false })
     }
   }
-  render(){
+  render() {
+    console.log(this.toggleContainer)
     return (
       <>
-        <input type="text" ref={this.textInput}/>
+        <div ref={this.toggleContainer}>
+          <button onClick={() => this.onClickHandler()}>Select an option</button>
+          {
+            this.state.isOpen && (
+              <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+              </ul>
+            )
+          }
+        </div>
       </>
     )
   }
@@ -152,6 +194,7 @@ class Home extends Component {
             changeInputValue={this.changeValue}
           />
           <List1 />
+          <OuterClickExample />
         </div>
 
       </Spin>
