@@ -30,11 +30,44 @@ for(let i=0;i<3;i++){
 //arr
 //arr
 
-if(true){
-  tmp = 'abc'
-  console.log(tmp)
-  let tmp;
-  console.log(tmp)
-  tmp=123
-  console.log(tmp)
+// if(true){
+//   tmp = 'abc'
+//   console.log(tmp)
+//   let tmp;
+//   console.log(tmp)
+//   tmp=123
+//   console.log(tmp)
+// }
+
+// var temp = new Date();
+// function f(){
+//   console.log(temp)
+//   if(false){
+//     var temp = 123   
+//   }
+// }
+
+// f()
+
+// console.log(typeof x)
+// let x;  //报错
+
+// function add(x=y,y=2){
+//   return [x,y]
+// }
+// console.log(add())
+
+var s = 'hello'
+for(var i = 0; i<5;i++){
+  console.log(s[i])
+}
+console.log(i)
+
+{
+  {
+    let app = 123
+    {
+      console.log(app)
+    }
+  }
 }
