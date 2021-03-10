@@ -189,12 +189,12 @@ class Home extends Component {
           <div className='tokeTxt'>
             热点推送
         </div>
-          <SearchCom
+          {/* <SearchCom
             inputValue={inputValue}
             changeInputValue={this.changeValue}
           />
           <List1 />
-          <OuterClickExample />
+          <OuterClickExample /> */}
         </div>
 
       </Spin>
