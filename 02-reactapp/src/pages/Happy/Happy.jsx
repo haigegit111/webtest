@@ -10,26 +10,22 @@ class Happy extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      visible1: false,
-      visible2: false
     }
   }
   componentDidMount() {
+    this.mapShow()
   }
-  onCancel1 = () => {
-    this.setState({
-      visible1: false
-    })
-  }
-  onCancel2 = () => {
-    this.setState({
-      visible2: false
-    })
+  mapShow(){
+    let map = new window.BMapGL.Map('myMap');
+    map.centerAndZoom(new window.BMapGL.Point(116.404, 39.915), 12)
   }
   render() {
-    const { visible1, visible2 } = this.state;
     return (
-      <></>
+      <div style={{position:'relative',width:'1000px',height:'1000px'}}>
+        <div id='myMap'>
+
+        </div>
+      </div>
     )
   }
 }
