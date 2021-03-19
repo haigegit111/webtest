@@ -1,0 +1,24 @@
+//  str.charAt(no.)  => 生成字符串的第几个数据
+1.indexOf
+  'hello'.indexOf('o')     =>  4
+  'hello'.indexOf('a)      =>  -1
+  存在的数据返回相应的下标，不存在则返回 -1
+2.includes():返回true or false; 表示是否找到了参数字符串
+  'hello'.includes('e')    => true
+  'hello'.includes('g')    => false
+3.startsWith():返回true or false; 表示参数字符串是否在原字符串头部
+  'hello'.startsWith('h')  => true
+  'hello'.startsWith('e')  => false
+4.endsWith():返回true or false; 表示参数字符串是否在原字符串尾部
+  'hello'.endsWith('o')    => true
+  'hello'.endsWith('l')    => false
+* includes(),startsWith(),endsWith();
+  都可放置2个参数
+  includes()和startsWith():针对后面的字符；
+  endsWith():针对前面的字符；
+
+5.repeat();重复数据
+  'x'.repeat(3)   //xxx
+6.padStart() and padEnd();  补全长度功能;
+  'a'.padEnd(5,'pple')        => apple
+  'e'.padStart(5,'appl')     => apple

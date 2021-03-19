@@ -126,6 +126,19 @@ class OuterClickExample extends Component {
     )
   }
 }
+
+function logProps(WrappedComponent){
+  class LogProps extends Component{
+    componentDidUpdate(prevProps){
+      console.log('old', prevProps)
+      console.log('new', this.props)
+    }
+    render(){
+      return <WrappedComponent {...this.props}/>
+    }
+  }
+  return LogProps
+}
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -138,7 +151,7 @@ class Home extends Component {
       inputValue: 'apple'
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getNowNews()
   }
   getNowNews() {
@@ -171,7 +184,7 @@ class Home extends Component {
     })
   }
   render() {
-    const { nowNews, isSpin, inputValue } = this.state
+    const { nowNews, isSpin } = this.state
     return (
       <Spin spinning={isSpin}>
         <div className='home contaner'>
@@ -189,12 +202,8 @@ class Home extends Component {
           <div className='tokeTxt'>
             热点推送
         </div>
-          {/* <SearchCom
-            inputValue={inputValue}
-            changeInputValue={this.changeValue}
-          />
-          <List1 />
-          <OuterClickExample /> */}
+          <logProps/>
+          
         </div>
 
       </Spin>

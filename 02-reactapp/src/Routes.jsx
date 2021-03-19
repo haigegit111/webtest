@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Science from './pages/Science'
 import Happy from './pages/Happy'
 import { Charts } from './components/Maps'
+import Hooks from './pages/Hooks'
 const nav = {
   "/login": {
     title: '登陆',
@@ -30,6 +31,10 @@ const nav = {
   "/charts": {
     title: '图表',
     component: Charts
+  },
+  "/hooks": {
+    title: 'Hooks',
+    component: Hooks
   }
 }
 
