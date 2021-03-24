@@ -1,2 +1,5 @@
-import status from './status'
-export default status;
+import statuStore from './status'
+const store = {
+  statuStore
+}
+export default store;

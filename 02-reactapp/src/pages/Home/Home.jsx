@@ -1,9 +1,11 @@
 import React, { Component, useState } from 'react'
 import { withRouter } from 'react-router-dom'
+import { observer, inject } from 'mobx-react'
 import { Button, message, Spin } from 'antd'
 import moment from 'moment'
 import homeApi from '../../api/homeApi'
 import './home.css'
+
 
 class SearchCom extends Component {
   constructor(props) {
@@ -139,6 +141,8 @@ function logProps(WrappedComponent){
   }
   return LogProps
 }
+@inject("statusStore")
+@observer
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -185,6 +189,8 @@ class Home extends Component {
   }
   render() {
     const { nowNews, isSpin } = this.state
+    const { id } = this.props.match
+    console.log(this.props)
     return (
       <Spin spinning={isSpin}>
         <div className='home contaner'>

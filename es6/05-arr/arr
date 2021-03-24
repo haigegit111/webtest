@@ -1,0 +1,39 @@
+  #Array 知识点
+
+1.Array.from():用于将2类对象转化为真正的数组。类似数组对象和可迭代对象。
+  e:
+    let arrayLike = {
+      '0': 1,
+      '1': 2,
+      '2': 3,
+      length: 3
+    }
+    console.log(Array.from(arrayLike))  => [1,2,3]
+    传递第2个参数，操作数组；第3个参数用于绑定this
+    console.log(Array.from(arrayLike, a => a*a))  => [1,4,9]
+
+2.Array.of()  :用于将一组值转化为数组
+  e:
+    Array.of() => []
+    Array.of(1,2,3) => [1,2,3]
+    Array.of(1)   => [1]
+    Array.of(undefined) => [undefined]
+
+3.copyWithin
+
+4.
+  find() : 返回返回值为true的第一个元素,没有返回undefined
+  findIndex() : 返回返回值为true的第一个元素的index,没有就返回-1;
+
+5.fill :使用给定值填充一个数组;fill 方法用于空数组的初始化非常方便。数组中已有的元素，会被全部抹去。
+    可接受第2，3个参数用于控制填充第起始位置。
+
+6.
+  entries(): 对贱值对对遍历
+  keys():  对贱名对遍历
+  values(): 对贱值对遍历
+
+7.includes(): 返回值为true or false; 可接受第2个参数，表示从哪个位置开始。
+8.尽量避免出现空位，处理方式都不一样。
+
+
